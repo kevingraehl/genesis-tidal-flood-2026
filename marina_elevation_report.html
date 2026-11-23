@@ -41,7 +41,7 @@
         <div class="hero-map-stage">
           <img src="basemap.png" alt="Marina District basemap from Crissy Field to Fort Mason">
           <canvas id="hero-water-canvas" width="375" height="250" aria-hidden="true"></canvas>
-          <img class="hero-skimboarder" src="skimboarder.png" alt="" aria-hidden="true">
+            <img class="hero-skimboarder" src="skimboarder-transparent-v2.png" alt="" aria-hidden="true">
           <div class="hero-live-label"><span>Water rising to Wednesday’s forecast</span><output id="hero-water-output">4.00 ft NAVD88</output></div>
           <div class="hero-map-key"><i></i>Blue = low ground connected to the shoreline</div>
           <div class="fiction-label">Skimboarder = fictional fun, not a forecast</div>
@@ -94,19 +94,21 @@
         <div class="sim-controls" aria-label="Flood simulation controls">
           <div class="water-readout"><output id="water-output" for="water-slider">8.66 ft NAVD88</output><span id="water-label">Wednesday forecast</span></div>
           <label for="water-slider">Water-surface elevation</label>
-          <input id="water-slider" type="range" min="4" max="14" value="8.66" step="0.01" list="water-marks">
-          <datalist id="water-marks"><option value="5.90"></option><option value="7.29"></option><option value="8.66"></option><option value="8.72"></option><option value="11"></option><option value="14"></option></datalist>
+          <input id="water-slider" type="range" min="4" max="20" value="8.66" step="0.01" list="water-marks">
+          <datalist id="water-marks"><option value="5.90"></option><option value="7.29"></option><option value="8.66"></option><option value="8.72"></option><option value="11"></option><option value="14.01"></option><option value="20"></option></datalist>
           <div class="scale-labels" aria-label="Reference water levels">
-            <span style="--p:19%"><i></i>Typical high<br><b>5.90</b></span>
-            <span class="slr" style="--p:23.5%"><i></i>2007 IPCC slice to 2027<br><b>typical high +0.2–0.7 ft</b></span>
-            <span style="--p:32.9%"><i></i>Highest astronomical<br><b>7.29</b></span>
-            <span class="forecast" style="--p:46.6%"><i></i>Wed. forecast<br><b>8.66</b></span>
-            <span class="record" style="--p:47.2%"><i></i>1983 record<br><b>8.72</b></span>
-            <span style="--p:70%"><i></i>Stress test<br><b>11.0</b></span>
+            <span style="--p:11.9%"><i></i>Typical high<br><b>5.90</b></span>
+            <span class="slr" style="--p:15%"><i></i>2007 IPCC slice to 2027<br><b>typical high +0.2–0.7 ft</b></span>
+            <span class="astronomical" style="--p:20.6%"><i></i>Highest astronomical<br><b>7.29</b></span>
+            <span class="forecast" style="--p:29.1%"><i></i>Wed. forecast<br><b>8.66</b></span>
+            <span class="record" style="--p:29.5%"><i></i>1983 record<br><b>8.72</b></span>
+            <span style="--p:43.8%"><i></i>Stress test<br><b>11.0</b></span>
+            <span class="extreme" style="--p:97%"><i></i>Extreme hypothetical<br><b>20.0</b></span>
           </div>
           <div class="sim-actions">
             <button id="play-rise" class="button primary" type="button">Watch water rise</button>
             <button id="jump-forecast" class="button" type="button">Jump to Wednesday</button>
+            <button id="jump-extreme" class="button extreme-button" type="button">Show the 20 ft extreme</button>
             <button id="add-report" class="button" type="button">Add a flood report</button>
           </div>
           <label class="terrain-toggle"><input id="terrain-toggle" type="checkbox"> Show elevation colors <small>(blue/green low; red/purple high—not flood danger)</small></label>
@@ -120,6 +122,7 @@
       </div>
       <div class="wrap map-explainer" id="citywide">
         <article><h3>Does the 11 ft stress test mean the Marina is fine?</h3><p><strong>It is reassuring for the requested Beach Street block—but not a guarantee.</strong> At 11 ft NAVD88, the model still does not connect tidal water to Beach &amp; Pierce. It begins connecting to the Pierce reference near 14.01 ft. Local garages can flood earlier through rain, waves, a low threshold, or drainage backup.</p></article>
+        <article><h3>What is the 20 ft button?</h3><p><strong>A deliberately extreme engagement scenario—not a forecast.</strong> It asks what the measured terrain would look like if still water somehow reached 20 ft NAVD88. It is not Wednesday's tide, a tsunami model, or a sea-level-rise prediction.</p></article>
         <article><h3>Can water come backward through drains?</h3><p><strong>Yes, under some conditions.</strong> Most of San Francisco uses a combined sewer. When capacity is exceeded, water can emerge through catch basins or manholes, and a building lateral can back up through low fixtures or floor drains. A maintained property backwater valve can close against reverse flow; no public source reviewed identifies one master neighborhood valve for this Marina block.</p></article>
         <article><h3>Other San Francisco areas at risk</h3><p>The City identifies <strong>Mission Bay, Islais Creek, Hunters Point, Candlestick Point, the Financial District/Embarcadero, the Marina, Treasure Island, and SFO</strong> as particularly susceptible to increasing coastal-flood risk. This map only analyzes the Marina/Crissy study area.</p></article>
         <article><h3>What did 2007 climate projections say?</h3><p>IPCC’s 2007 scenarios projected roughly <strong>0.18–0.59 m (0.6–1.9 ft) of global rise by 2090–2099</strong> versus 1980–1999. A rough straight-line slice to 2027 is about 0.2–0.7 ft, shown only for context. It is not a local 2027 tide prediction and should not be added again to today’s measured or forecast water levels.</p></article>

@@ -9,18 +9,22 @@
 .water-readout span{color:#8de0de;font-weight:800;text-align:right}
 .sim-controls>label{display:block;margin:0 0 8px;color:#bdd4db;font-size:.9rem}
 #water-slider{display:block;width:100%;accent-color:#38a8e8;cursor:ew-resize}
-.scale-labels{height:104px;position:relative;margin:4px 8px 0;color:#a9c3cc;font-size:.67rem;line-height:1.15}
+.scale-labels{height:142px;position:relative;margin:4px 8px 0;color:#a9c3cc;font-size:.67rem;line-height:1.15}
 .scale-labels>span{position:absolute;left:var(--p);top:0;width:105px;transform:translateX(-50%);text-align:center}
 .scale-labels i{display:block;width:2px;height:16px;background:#c5d8df;margin:0 auto 3px}
 .scale-labels b{color:#fff}
 .scale-labels .slr{top:48px;color:#e7c980}
 .scale-labels .slr i{background:#e7c980}
+.scale-labels .astronomical{top:94px}
 .scale-labels .forecast{top:0;color:#6be1dd;font-weight:800}
 .scale-labels .forecast i{background:#6be1dd;width:4px;height:22px}
 .scale-labels .record{top:50px;color:#f0b429}
 .scale-labels .record i{background:#f0b429}
+.scale-labels .extreme{color:#ff9d78;font-weight:850}
+.scale-labels .extreme i{background:#ff7048;width:4px;height:22px}
 .sim-actions{display:flex;flex-wrap:wrap;gap:9px}
 .sim-actions .button{flex:1 1 170px}
+.sim-actions .extreme-button{background:#ff7048;border-color:#ff7048;color:#171d20}
 .terrain-toggle{margin-top:15px!important;color:#c2d5dc!important;cursor:pointer}
 .terrain-toggle input{margin-right:7px}
 .terrain-toggle small{font-size:.78rem;color:#91aeb8}
@@ -41,7 +45,7 @@
   .map-shell{width:calc(100% - 20px)}
   .map-shell #map{height:480px}
   .scale-labels{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:12px 0 15px;font-size:.66rem}
-  .scale-labels>span,.scale-labels .slr,.scale-labels .forecast,.scale-labels .record{position:static;transform:none;width:auto;top:auto;text-align:left;background:rgba(255,255,255,.055);border-radius:8px;padding:7px 8px;min-height:48px}
+  .scale-labels>span,.scale-labels .slr,.scale-labels .astronomical,.scale-labels .forecast,.scale-labels .record{position:static;transform:none;width:auto;top:auto;text-align:left;background:rgba(255,255,255,.055);border-radius:8px;padding:7px 8px;min-height:48px}
   .scale-labels i,.scale-labels .forecast i{display:block;float:left;width:3px;height:30px;margin:0 7px 0 0}
   .map-key{right:10px;bottom:10px}
   .scroll-hint{display:none}
@@ -64,7 +68,7 @@
 .hero-map-stage>img,.hero-map-stage>canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 .hero-map-stage>img{object-fit:cover}
 .hero-map-stage>canvas{image-rendering:auto}
-.hero-map-stage>.hero-skimboarder{z-index:3;inset:33% auto auto -38%;width:31%;height:auto;object-fit:contain;mix-blend-mode:multiply;filter:drop-shadow(0 5px 5px rgba(0,0,0,.32));animation:skim-across 7s linear infinite}
+.hero-map-stage>.hero-skimboarder{z-index:3;inset:1% auto auto -38%;width:31%;height:auto;object-fit:contain;filter:drop-shadow(0 5px 5px rgba(0,0,0,.32));animation:skim-across 7s linear infinite}
 @keyframes skim-across{0%,58%{transform:translateX(0) rotate(-2deg);opacity:0}62%{opacity:1}92%{transform:translateX(455%) rotate(2deg);opacity:1}97%,100%{transform:translateX(500%) rotate(2deg);opacity:0}}
 .hero-live-label{position:absolute;left:16px;top:16px;display:grid;gap:2px;background:rgba(7,26,41,.91);padding:10px 13px;border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.28)}
 .hero-live-label span{font-size:.78rem;color:#a9d5db;font-weight:750}

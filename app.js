@@ -2,7 +2,7 @@ const DATA_URL = "analysis.json";
 const API = "/api/genesis-flood/reports";
 const FORECAST_NAVD88 = 8.66;
 const MIN_WATER = 4;
-const MAX_WATER = 14;
+const MAX_WATER = 20;
 
 const map = L.map("map", {
   zoomControl: true,
@@ -53,6 +53,7 @@ function waterDescription(level) {
   if (Math.abs(level - 7.29) < 0.04) return "highest astronomical tide";
   if (Math.abs(level - 5.90) < 0.04) return "typical higher-high water";
   if (Math.abs(level - 11) < 0.04) return "11 ft stress test";
+  if (Math.abs(level - 20) < 0.04) return "extreme hypothetical — not a forecast";
   return level < FORECAST_NAVD88 ? "below Wednesday forecast" : "stress-test level";
 }
 
@@ -62,7 +63,9 @@ function connectionSummary(level) {
   if (level < 11.06) return "Palace of Fine Arts west-side lows begin to connect; Beach & Pierce remains disconnected.";
   if (level < 12.82) return "Marina & Scott-area lows begin to connect; Beach & Pierce remains disconnected.";
   if (level < 14.01) return "Beach & Scott-area lows begin to connect; Beach & Pierce remains disconnected.";
-  return "Near 14.01 ft, the terrain-only model first connects shoreline water to the Beach & Pierce reference.";
+  if (level < 16) return "Near 14.01 ft, the terrain-only model first connects shoreline water to the Beach & Pierce reference.";
+  if (level < 19.95) return "Extreme scenario: broad low terrain is connected. This is a visualization, not a tide prediction.";
+  return "20 ft extreme hypothetical: dramatic terrain stress test only — not forecast, surge or sea-level-rise guidance.";
 }
 
 function drawWater(level) {
@@ -229,6 +232,7 @@ slider.addEventListener("input", () => {
   drawWater(Number(slider.value));
 });
 document.querySelector("#jump-forecast").addEventListener("click", () => setWater(FORECAST_NAVD88));
+document.querySelector("#jump-extreme").addEventListener("click", () => setWater(20));
 document.querySelector("#terrain-toggle").addEventListener("change", (event) => terrainLayer?.setOpacity(event.currentTarget.checked ? 0.46 : 0));
 document.querySelector("#play-rise").addEventListener("click", (event) => {
   if (animationStarted !== undefined) {

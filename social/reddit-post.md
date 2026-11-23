@@ -26,3 +26,13 @@ I’d especially like real observations from Marina/Crissy residents: Where does
 # Shorter alternate title
 
 The Great Genesis Flood of SF? I mapped the king tide—Marina Blvd may be the least confusing part.
+
+# 20-foot engagement-video title
+
+What would San Francisco look like under a completely hypothetical 20-foot Bay? I pushed the LiDAR model until Marina Blvd became a skim park.
+
+# 20-foot engagement-video caption
+
+This is deliberately ridiculous—and clearly labeled that way. **Twenty feet NAVD88 is not Wednesday's forecast, a tsunami model, or a sea-level-rise prediction.** It is an extreme terrain stress test using the same 2023 LiDAR surface. The skimboarder is fictional; the measured terrain is real.
+
+Try the normal forecast and the 20-foot extreme yourself: **https://kevingraehl.com/flood**

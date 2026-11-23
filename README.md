@@ -12,6 +12,7 @@ The map is a terrain screening tool, not a parcel-level forecast. Its blue layer
 ## What is included
 
 - Animated landing-page water rise and full interactive flood slider
+- A clearly labeled 20 ft NAVD88 extreme hypothetical, backed by a freshly encoded 4–20 ft terrain-connectivity surface—not a forecast
 - 2023 LiDAR-derived elevation samples and shoreline-connected thresholds
 - Plain-language explanation of the coastal flood warning
 - No-login community flood-report interface
